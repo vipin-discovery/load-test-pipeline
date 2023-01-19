@@ -1,6 +1,26 @@
-name: Test Locust Load Test
+name: Manual Trigger
 
-on: [push]
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: 'select where to run'
+        required: true
+        default: 'github'
+        type: choice
+        options:
+        - github
+        - aws
+        - azure
+      artifacts:
+        description: 'artifacts reporting'
+        required: false
+        type: boolean
+    push:
+      branches:
+      - main
+      - test
+      - dev    
 
 jobs:
   build:
