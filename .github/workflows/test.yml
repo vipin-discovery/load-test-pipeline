@@ -12,6 +12,47 @@ on:
         - github
         - aws
         - azure
+      product:
+        required: true
+        type: choice
+        default: "BEAM"
+        options:
+          - DTC
+          - ATVE
+          - BEAM
+        description: "ex. DTC, ATVE, BEAM"
+      client:
+        required: true
+        type: choice
+        options:
+          - android
+          - androidtv
+          - appletv
+          - firetab
+          - firetv
+          - ios
+          - ipad
+          - lg
+          - roku
+          - samsung
+          - web
+          - xbox
+        default: "web"
+        description: "client under test ex. android, roku, web, appletv etc"
+      test_type:
+        required: true
+        default: "integration"
+        description: "ex. integration, nightly, gqa_core_test, regression"
+      region:
+        required: true
+        default: "us"
+        description: "region country/city code as set in SSM parameters (e.g us, gb, br)"
+      feature:
+        description: "feature file (ex. welcome_screen.feature)"
+        required: false
+      tag:
+        description: 'cucumber tag for filtering scenarios to execute.'
+        required: true   
       artifacts:
         description: 'artifacts reporting'
         required: false
