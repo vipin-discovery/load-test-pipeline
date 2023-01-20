@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       platform:
-        description: 'select where to run'
+        description: 'target environment'
         required: true
         default: 'github'
         type: choice
