@@ -25,25 +25,15 @@ on:
       users:
         required: true
         default: "0 - 1000000"
-        description: "The Number of users you want to test"
+        description: "The Number of users for you want to test"
       spawn-rate:
         description: 'swapn-rate according to which you want to execute the load test'
         required: true
-        default: '0s - 50s'
-        type: choice
-        options:
-        - 10s
-        - 20s
-        - 50s
+        default: "0s - 1000000s"
       run-time:
         description: 'run-time you want to execute the test for specific time period.'
         required: true
         default: '10s - 43200s'
-        type: choice
-        options:
-        - 10s
-        - 200s
-        - 500s
     push:
       branches:
       - main
