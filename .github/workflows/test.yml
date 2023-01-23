@@ -41,9 +41,9 @@ on:
         default: '10s - 43200s'
         type: choice
         options:
-        - ***
-        - ***
-        - *** 
+        - 10s
+        - 200s
+        - 500s
     push:
       branches:
       - main
