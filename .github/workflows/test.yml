@@ -1,4 +1,5 @@
 name: Running Locust Load Test
+
 on:
   workflow_dispatch:
     inputs:
@@ -28,7 +29,7 @@ on:
       spawn-rate:
         description: 'swapn-rate according to which you want to execute the load test'
         required: true
-        default: "10s"
+        default: "0s - 1000000s"
       run-time:
         description: 'run-time you want to execute the test for specific time period.'
         required: true
@@ -37,7 +38,7 @@ on:
       branches:
       - main
       - test
-      - dev    
+      - dev  
 
 jobs:
   build:

@@ -11,21 +11,21 @@ inputs:
   USERS:
     description: 'Number of Users to spawn. Defaults to 5.'
     required: false
-    default: '0 - 1000000'
+    default: '5'
   RATE:
     description: 'Specify the hatch rate (number of users to spawn per second). Defaults to 5.'
     required: false
-    default: '10s'
+    default: '5'
   RUNTIME:
     description: 'Specify the run time for a test. Defaults to 10 seconds.'
     required: false
-    default: '10s - 43200s'
+    default: '10s'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.LOCUSTFILE }}
-    - ${{ inputs.URL }}
+    - ${{ inputs.HOST }}
     - ${{ inputs.USERS }}
     - ${{ inputs.RATE }}
     - ${{ inputs.RUNTIME }}
