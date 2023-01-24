@@ -28,7 +28,7 @@ on:
       spawn-rate:
         description: 'swapn-rate according to which you want to execute the load test'
         required: true
-        default: "1s - 1000000s"
+        default: "5s - 1000000s"
       run-time:
         description: 'run-time you want to execute the test for specific time period.'
         required: true
@@ -51,7 +51,7 @@ jobs:
           LOCUSTFILE: "locustfile.py"
           URL:  "https://prod.playback.h264.io"
           USERS: "0 - 1000000"
-          RATE: "0s - 1000000s"
+          RATE: "5s - 1000000s"
           RUNTIME: "10s - 43200s"
           
    
