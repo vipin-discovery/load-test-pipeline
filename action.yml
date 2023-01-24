@@ -11,15 +11,15 @@ inputs:
   USERS:
     description: 'Number of Users to spawn. Defaults to 5.'
     required: false
-    default: '5'
+    default: '*'
   RATE:
     description: 'Specify the hatch rate (number of users to spawn per second). Defaults to 5.'
     required: false
-    default: '5'
+    default: '*'
   RUNTIME:
     description: 'Specify the run time for a test. Defaults to 10 seconds.'
     required: false
-    default: '10s'
+    default: '*s'
 runs:
   using: 'docker'
   image: 'Dockerfile'
