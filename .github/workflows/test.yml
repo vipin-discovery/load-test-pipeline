@@ -1,5 +1,4 @@
-name: Running Test
-
+name: Running Locust Load Test
 on:
   workflow_dispatch:
     inputs:
@@ -51,6 +50,8 @@ jobs:
         with:
           LOCUSTFILE: "locustfile.py"
           URL:  "https://prod.playback.h264.io"
-          USERS: "6"
-          RATE: "6"
-          RUNTIME: "10s"
+          USERS: "0 - 1000000"
+          RATE: "0s - 1000000s"
+          RUNTIME: "10s - 43200s"
+          
+   
