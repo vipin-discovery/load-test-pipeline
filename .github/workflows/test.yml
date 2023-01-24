@@ -49,7 +49,7 @@ jobs:
         uses: vipin-discovery/Demo-locust-github-action@main
         with:
           LOCUSTFILE: "locustfile.py"
-          URL:  "https://prod.playback.h264.io"
+          HOST: $["https://prod.playback.h264.io"]
           USERS: "0 - 1000000"
           RATE: "10s"
           RUNTIME: "10s - 43200s"
