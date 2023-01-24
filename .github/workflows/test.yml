@@ -29,11 +29,11 @@ on:
       spawn-rate:
         description: 'swapn-rate according to which you want to execute the load test'
         required: true
-        default: "1 - 1000"
+        default: "1 - *"
       run-time:
         description: 'run-time you want to execute the test for specific time period.'
         required: true
-        default: "1s - 43200s"
+        default: "1s - *s"
     push:
       branches:
       - main
