@@ -1,4 +1,4 @@
-name: Running Test
+name: Running Locust Load Test
 
 on:
   workflow_dispatch:
