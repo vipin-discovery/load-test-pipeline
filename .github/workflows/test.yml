@@ -1,4 +1,4 @@
-name: Running Test
+name: Running Locust Load Test
 
 on:
   workflow_dispatch:
@@ -24,16 +24,16 @@ on:
         description: "ex. integration, nightly, gqa_core_test, regression"
       users:
         required: true
-        default: "1000000"
+        default: "1 - 1000000"
         description: "The Number of users for you want to test"
       spawn-rate:
         description: 'swapn-rate according to which you want to execute the load test'
         required: true
-        default: "1000"
+        default: "1 - 10000"
       run-time:
         description: 'run-time you want to execute the test for specific time period.'
         required: true
-        default: "43200s"
+        default: "10s - 43200s"
     push:
       branches:
       - main
@@ -51,6 +51,6 @@ jobs:
         with:
           LOCUSTFILE: "locustfile.py"
           URL:  "https://prod.playback.h264.io"
-          USERS: "1000000"
-          RATE: "1000"
-          RUNTIME: "43200s"
+          USERS: "1 - 1000000"
+          RATE: "1 - 10000"
+          RUNTIME: "10s - 43200s"
