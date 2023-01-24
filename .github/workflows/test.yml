@@ -51,6 +51,6 @@ jobs:
         with:
           LOCUSTFILE: "locustfile.py"
           URL:  "https://prod.playback.h264.io"
-          USERS: "0 - 10000000"
-          RATE: "0 - 1000000"
-          RUNTIME: "10s - 43200s"
+          USERS: ""
+          RATE: ""
+          RUNTIME: ""
