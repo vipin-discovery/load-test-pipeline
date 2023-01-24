@@ -50,7 +50,7 @@ jobs:
         uses: vipin-discovery/Demo-locust-github-action@main
         with:
           LOCUSTFILE: "locustfile.py"
-          HOST: ${{ "https://prod.playback.h264.io" }}
+          HOST: $var.yml
           USERS: "0 - 1000000"
           RATE: "10s"
           RUNTIME: "10s - 43200s"
