@@ -15,7 +15,7 @@ inputs:
   RATE:
     description: 'Specify the hatch rate (number of users to spawn per second). Defaults to 5.'
     required: false
-    default: '5s - 1000000s'
+    default: '10s'
   RUNTIME:
     description: 'Specify the run time for a test. Defaults to 10 seconds.'
     required: false
