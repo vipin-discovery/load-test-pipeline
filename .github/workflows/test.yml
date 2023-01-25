@@ -24,21 +24,26 @@ on:
         description: "ex. integration, nightly, gqa_core_test, regression"
       users:
         required: true
-        default: "1 100"
+        default: " "
         description: "The Number of users for you want to test"
       spawn-rate:
         description: 'swapn-rate according to which you want to execute the load test'
         required: true
-        default: "1 100"
+        default: " "
       run-time:
         description: 'run-time you want to execute the test for specific time period.'
         required: true
-        default: "10s 100s"
+        default: " "
     push:
       branches:
       - main
       - test
       - dev    
+env:
+  URL: ${{secrert.URL}}
+  RATE: ${{secrets.RATE}}
+  USERS: ${{secrets.USERS}}
+  RUNTIME: ${{scerets.RUNTIME}}
 
 jobs:
   build:
@@ -47,11 +52,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run Load Test
-        uses: vipin-discovery/Demo-locust-github-action@main
+        uses: actions/checkout@v2
         with:
           LOCUSTFILE: "locustfile.py"
-          URL:  "https://prod.playback.h264.io"
-          USERS: "1 100"
-          RATE: "1  100"
-          RUNTIME: "10s 100s"
+          URL:  URL
+          USERS: USERS
+          RATE: RATE
+          RUNTIME: RUNTIME
           
+
