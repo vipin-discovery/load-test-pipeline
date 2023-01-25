@@ -55,10 +55,10 @@ jobs:
       - name: Run Load Test
         uses: actions/checkout@v1
         with:
-          LOCUSTFILE: ${{ github.event.input.LOCUSTFILE }}
-          URL:  ${{ github.event.input.URL }}
-          USERS: ${{ github.event.input.USERS }}
-          RATE: ${{ github.event.input.RATE }}
-          RUNTIME: ${{ github.event.input.RUNTIME }}
+          LOCUSTFILE: LOCUSTFILE 
+          URL:  URL
+          USERS: USERS
+          RATE: RATE
+          RUNTIME: RUNTIME
           
 
