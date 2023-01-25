@@ -40,11 +40,11 @@ on:
       - test
       - dev    
 env:
-  LOCUSTFILE: ${{secrets.LOCUSTFILE}}
-  URL: ${{secrets.URL}}
-  RATE: ${{secrets.RATE}}
-  USERS: ${{secrets.USERS}}
-  RUNTIME: ${{secrets.RUNTIME}}
+  LOCUSTFILE: ${{ github.event.input.LOCUSTFILE }}
+  URL: ${{ github.event.input.URL }}
+  RATE: ${{ github.event.input.RATE }}
+  USERS: ${{ github.event.input.USERS }}
+  RUNTIME: ${{github.event.input.RUNTIME }}
 
 jobs:
   build:
@@ -55,10 +55,10 @@ jobs:
       - name: Run Load Test
         uses: actions/checkout@v1
         with:
-          LOCUSTFILE: ${{secrets.LOCUSTFILE}}
-          URL:  ${{secrets.URL}}
-          USERS: ${{secrets.USERS}}
-          RATE: ${{secrets.RATE}}
-          RUNTIME: ${{secrets.RUNTIME}}
+          LOCUSTFILE: ${{ github.event.input.LOCUSTFILE }}
+          URL:  ${{ github.event.input.URL }}
+          USERS: ${{ github.event.input.USERS }}
+          RATE: ${{ github.event.input.RATE }}
+          RUNTIME: ${{github.event.input.RUNTIME }}
           
 
