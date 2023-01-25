@@ -53,7 +53,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run Load Test
-        uses: actions/checkout@v2
+        uses: vipin-discovery/Demo-locust-github-action@dev1
         with:
           LOCUSTFILE: LOCUSTFILE
           URL:  URL
