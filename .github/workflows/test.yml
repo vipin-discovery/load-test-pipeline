@@ -40,10 +40,10 @@ on:
       - test
       - dev    
 env:
-  URL: ${{secrert.URL}}
+  URL: ${{secrets.URL}}
   RATE: ${{secrets.RATE}}
   USERS: ${{secrets.USERS}}
-  RUNTIME: ${{scerets.RUNTIME}}
+  RUNTIME: ${{secrets.RUNTIME}}
 
 jobs:
   build:
