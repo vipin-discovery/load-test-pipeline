@@ -44,7 +44,7 @@ env:
   URL: ${{ github.event.input.URL }}
   RATE: ${{ github.event.input.RATE }}
   USERS: ${{ github.event.input.USERS }}
-  RUNTIME: ${{github.event.input.RUNTIME }}
+  RUNTIME: ${{ github.event.input.RUNTIME }}
 
 jobs:
   build:
@@ -59,6 +59,6 @@ jobs:
           URL:  ${{ github.event.input.URL }}
           USERS: ${{ github.event.input.USERS }}
           RATE: ${{ github.event.input.RATE }}
-          RUNTIME: ${{github.event.input.RUNTIME }}
+          RUNTIME: ${{ github.event.input.RUNTIME }}
           
 
