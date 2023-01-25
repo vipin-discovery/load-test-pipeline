@@ -40,6 +40,7 @@ on:
       - test
       - dev    
 env:
+  LOCUSTFILE: ${{secrets.LOCUSTFILE}}
   URL: ${{secrets.URL}}
   RATE: ${{secrets.RATE}}
   USERS: ${{secrets.USERS}}
@@ -54,7 +55,7 @@ jobs:
       - name: Run Load Test
         uses: actions/checkout@v2
         with:
-          LOCUSTFILE: "locustfile.py"
+          LOCUSTFILE: LOCUSTFILE
           URL:  URL
           USERS: USERS
           RATE: RATE
