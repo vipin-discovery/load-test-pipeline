@@ -55,10 +55,10 @@ jobs:
       - name: Run Load Test
         uses: actions/checkout@v1
         with:
-          LOCUSTFILE: LOCUSTFILE 
-          URL:  URL
-          USERS: USERS
-          RATE: RATE
-          RUNTIME: RUNTIME
+          LOCUSTFILE: locustfile
+          URL:  url
+          USERS: users
+          RATE: rate
+          RUNTIME: runtime
           
 
