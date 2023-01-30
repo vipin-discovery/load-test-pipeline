@@ -67,8 +67,8 @@ jobs:
         with:
           LOCUSTFILE: "locustfile.py"
           URL:  "https://prod.playback.h264.io"
-          USERS: ${{ github.event.input.users }}
-          RATE: ${{ github.event.input.spawn-rate }}
-          RUNTIME: ${{ github.event.input.run-time }}
+          USERS: ${{ github.event.inputs.users }}
+          RATE: ${{ github.event.inputs.spawn-rate }}
+          RUNTIME: ${{ github.event.inputs.run-time }}
           
 
