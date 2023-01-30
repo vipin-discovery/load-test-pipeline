@@ -9,17 +9,17 @@ inputs:
     description: 'URL to the site you want to load test. This is Required!'
     required: true
   USERS:
-    description: 'Number of Users to spawn. Defaults to 5.'
+    description: 'Number of Users to spawn. Defaults to "1 - 1000000.'
     required: false
-    default: '5'
+    default: " "
   RATE:
-    description: 'Specify the hatch rate (number of users to spawn per second). Defaults to 5.'
+    description: 'Specify the hatch rate (number of users to spawn per second). Defaults to 1 - 10000.'
     required: false
-    default: '5'
+    default: " "
   RUNTIME:
-    description: 'Specify the run time for a test. Defaults to 10 seconds.'
+    description: 'Specify the run time for a test. Defaults to 10second - 43200second.'
     required: false
-    default: '10s'
+    default: " "
 runs:
   using: 'docker'
   image: 'Dockerfile'
