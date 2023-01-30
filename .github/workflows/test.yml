@@ -48,10 +48,10 @@ jobs:
       - name: Run Load Test
         uses: vipin-discovery/load-test-pipeline@dev1
         with:
-          LOCUSTFILE= "locustfile.py"
-          URL="https://prod.playback.h264.io"
-          USERS=${{users}}
-          RATE=${{spawn-rate}}
-          RUNTIME=${{run-time}}
+          LOCUSTFILE: "locustfile.py"
+          URL:  "https://prod.playback.h264.io"
+          USERS: "${{users}}"
+          RATE: "${{spawn-rate}}"
+          RUNTIME: "${{run-time}}"
           
 
