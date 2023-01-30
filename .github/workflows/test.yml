@@ -40,9 +40,9 @@ on:
       - test
       - dev 
 env: 
-  USER: ${{ secrets.USERS }}
-  SPN: ${{ secrets.RATE }}
-  RT: ${{ secrets.RUNTIME }}
+  USER: "5"
+  SPN: "2"
+  RT: "10s"
 jobs:
   build:
     runs-on: ubuntu-latest
