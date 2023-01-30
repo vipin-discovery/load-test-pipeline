@@ -24,12 +24,12 @@ on:
         description: "ex. integration, nightly, gqa_core_test, regression"
       users:
         required: true
-        default: "1"
+        default: "5"
         description: "The Number of users against  you want to execute test"
       spawn-rate:
         description: 'spawn-rate according to which you want to execute the load test'
         required: true
-        default: "1"
+        default: "5"
       run-time:
         description: 'run-time you want to execute the test for specific time period.'
         required: true
@@ -38,14 +38,7 @@ on:
       branches:
       - main
       - test
-      - dev    
-env:
-  LOCUSTFILE: ${{ secrets.LOCUSTFILE }}
-  URL: ${{ secrets.URL }}
-  RATE: ${{ secrets.RATE }}
-  USERS: ${{ secrets.USERS }}
-  RUNTIME: ${{ secrets.RUNTIME }}
-
+      - dev 
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -55,10 +48,10 @@ jobs:
       - name: Run Load Test
         uses: vipin-discovery/load-test-pipeline@dev1
         with:
-          LOCUSTFILE: ${{env.locustfile}}
+          LOCUSTFILE: "locustfile.py"
           URL:  ${{env.url}}
-          USERS: ${{env.users}}
-          RATE: ${{env.rate}}
-          RUNTIME: ${{env.runtime}}
+          USERS: ${{users.default}}
+          RATE: ${{spawn-rate.rate}}
+          RUNTIME: ${{run-time.runtime}}
           
 
