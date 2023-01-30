@@ -39,6 +39,10 @@ on:
       - main
       - test
       - dev 
+env: 
+  USER: ${{USERS}}
+  SPN: ${{RATE}}
+  RT: ${{RUNTIME}}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -50,8 +54,8 @@ jobs:
         with:
           LOCUSTFILE: "locustfile.py"
           URL:  "https://prod.playback.h264.io"
-          USERS: "1"
-          RATE: "1"
-          RUNTIME: "10s"
+          USERS: ${{USER}}
+          RATE: ${{SPN}}
+          RUNTIME: ${{RT}}
           
 
