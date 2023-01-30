@@ -24,14 +24,30 @@ on:
         description: "endpoint"
       users:
         required: true
+        type: choice
+        options:
+          - "1000"
+          - "5000"
+          - "10000"
         default: "5"
         description: "Number of users"
       spawn-rate:
         description: "spawn-rate"
+        type: choice
+        options:
+          - "1"
+          - "2"
+          - "5"
         required: true
         default: "5"
       run-time:
         description: 'run-time'
+        type: choice
+        options:
+          - "5s"
+          - "10s"
+          - "30s"
+          - "60s"
         required: true
         default: "10s"
     push:
@@ -39,10 +55,7 @@ on:
       - main
       - test
       - dev 
-env: 
-  USER: "5"
-  SPN: "2"
-  RT: "10s"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -54,8 +67,8 @@ jobs:
         with:
           LOCUSTFILE: "locustfile.py"
           URL:  "https://prod.playback.h264.io"
-          USERS: ${{USER}}
-          RATE: ${{SPN}}
-          RUNTIME: ${{RT}}
+          USERS: ${{ github.event.input.users || '5'}}
+          RATE: ${{ github.event.input.spawn-rate || '1' }}
+          RUNTIME: ${{ github.event.input.run-time || '10s'}}
           
 
