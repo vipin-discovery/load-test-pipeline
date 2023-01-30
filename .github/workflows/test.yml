@@ -50,8 +50,8 @@ jobs:
         with:
           LOCUSTFILE: "locustfile.py"
           URL:  "https://prod.playback.h264.io"
-          USERS: ${{users.users}
-          RATE: ${{spawn-rate.spawn-rate}}
-          RUNTIME: ${{run-time.run-time}}
+          USERS: ${{users}
+          RATE: ${{spawn-rate}}
+          RUNTIME: ${{run-time}}
           
 
