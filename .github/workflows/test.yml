@@ -40,11 +40,11 @@ on:
       - test
       - dev    
 env:
-  LOCUSTFILE: ${{LOCUSTFILE}}
-  URL: ${{URL}}
-  RATE: ${{RATE}}
-  USERS: ${{USERS}}
-  RUNTIME: ${{RUNTIME}}
+  LOCUSTFILE: ${{ secrets.LOCUSTFILE }}
+  URL: ${{ secrets.URL }}
+  RATE: ${{ secrets.RATE }}
+  USERS: ${{ secrets.USERS }}
+  RUNTIME: ${{ secrets.RUNTIME }}
 
 jobs:
   build:
