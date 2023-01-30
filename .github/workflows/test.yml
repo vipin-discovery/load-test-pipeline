@@ -49,7 +49,7 @@ jobs:
         uses: vipin-discovery/load-test-pipeline@dev1
         with:
           LOCUSTFILE: "locustfile.py"
-          URL:  ${{env.url}}
+          URL:  "https://prod.playback.h264.io"
           USERS: ${{users.default}}
           RATE: ${{spawn-rate.rate}}
           RUNTIME: ${{run-time.runtime}}
