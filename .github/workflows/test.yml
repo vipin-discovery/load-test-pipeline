@@ -53,12 +53,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run Load Test
-        uses: actions/checkout@v1
+        uses: vipin-discovery/load-test-pipeline@dev1
         with:
-          LOCUSTFILE: $locustfile
-          URL:  $url
-          USERS: $users
-          RATE: $rate
-          RUNTIME: $runtime
+          LOCUSTFILE: ${{env.locustfile}}
+          URL:  ${{env.url}}
+          USERS: ${{env.users}}
+          RATE: ${{env.rate}}
+          RUNTIME: ${{env.runtime}}
           
 
