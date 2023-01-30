@@ -40,11 +40,11 @@ on:
       - test
       - dev    
 env:
-  LOCUSTFILE: ${{ github.event.input.LOCUSTFILE }}
-  URL: ${{ github.event.input.URL }}
-  RATE: ${{ github.event.input.RATE }}
-  USERS: ${{ github.event.input.USERS }}
-  RUNTIME: ${{ github.event.input.RUNTIME }}
+  LOCUSTFILE: ${{LOCUSTFILE}}
+  URL: ${{URL}}
+  RATE: ${{RATE}}
+  USERS: ${{USERS}}
+  RUNTIME: ${{RUNTIME}}
 
 jobs:
   build:
