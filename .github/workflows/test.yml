@@ -17,7 +17,7 @@ on:
         options:
           - https://prod.playback.h264.io
         default: "https://prod.playback.h264.io"
-        description: "client under beam. https://prod.playback.h264.io"
+        description: "Host"
       endpoint:
         required: true
         default: "integration"
@@ -25,9 +25,9 @@ on:
       users:
         required: true
         default: " "
-        description: "The Number of users for you want to test"
+        description: "The Number of users against  you want to execute test"
       spawn-rate:
-        description: 'swapn-rate according to which you want to execute the load test'
+        description: 'spawn-rate according to which you want to execute the load test'
         required: true
         default: " "
       run-time:
