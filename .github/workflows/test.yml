@@ -24,16 +24,16 @@ on:
         description: "ex. integration, nightly, gqa_core_test, regression"
       users:
         required: true
-        default: " "
+        default: "1"
         description: "The Number of users against  you want to execute test"
       spawn-rate:
         description: 'spawn-rate according to which you want to execute the load test'
         required: true
-        default: " "
+        default: "1"
       run-time:
         description: 'run-time you want to execute the test for specific time period.'
         required: true
-        default: " "
+        default: "10s"
     push:
       branches:
       - main
