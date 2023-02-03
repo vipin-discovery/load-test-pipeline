@@ -15,9 +15,7 @@ on:
       host:
         required: true
         type: string
-        options:
-          - https://prod.playback.h264.io
-        default: "https://prod.playback.h264.io"
+        default: " "
         description: "  "
       endpoint:
         required: true
@@ -55,7 +53,7 @@ jobs:
         uses: vipin-discovery/Demo-locust-github-action@main
         with:
           LOCUSTFILE: "${LOCUSTFILE}"
-          URL:  "${URL}"
+          HOST:  "${HOST}"
           USERS: "${RATE}"
           RATE: "${USERS}"
           RUNTIME: "${RUNTIME}"

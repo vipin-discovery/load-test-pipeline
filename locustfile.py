@@ -58,5 +58,5 @@ class MyReqRes(SequentialTaskSet):
 
 class LiveStream(HttpUser):
     wait_time = constant(5)
-    host = "https://prod.playback.h264.io"
+   # host = "https://prod.playback.h264.io"
     tasks = [MyReqRes]
