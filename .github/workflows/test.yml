@@ -1,4 +1,4 @@
-name: Manual Trigger
+name: Running Locust Load Test
 
 on:
   workflow_dispatch:
@@ -12,56 +12,38 @@ on:
         - github
         - aws
         - azure
-      product:
+      host:
         required: true
-        type: choice
-        default: "BEAM"
+        type: string
         options:
-          - DTC
-          - ATVE
-          - BEAM
-        description: "ex. DTC, ATVE, BEAM"
-      client:
+          - https://prod.playback.h264.io
+        default: "https://prod.playback.h264.io"
+        description: "  "
+      endpoint:
         required: true
-        type: choice
-        options:
-          - android
-          - androidtv
-          - appletv
-          - firetab
-          - firetv
-          - ios
-          - ipad
-          - lg
-          - roku
-          - samsung
-          - web
-          - xbox
-        default: "web"
-        description: "client under test ex. android, roku, web, appletv etc"
-      test_type:
-        required: true
+        type: string
         default: "integration"
-        description: "ex. integration, nightly, gqa_core_test, regression"
-      region:
+        description: "endpoint"
+      users:
         required: true
-        default: "us"
-        description: "region country/city code as set in SSM parameters (e.g us, gb, br)"
-      feature:
-        description: "feature file (ex. welcome_screen.feature)"
-        required: false
-      tag:
-        description: 'cucumber tag for filtering scenarios to execute.'
-        required: true   
-      artifacts:
-        description: 'artifacts reporting'
-        required: false
-        type: boolean
+        type: string
+        default: "5"
+        description: "Number of users"
+      spawn-rate:
+        description: "spawn-rate"
+        type: string
+        required: true
+        default: "5"
+      run-time:
+        description: 'run-time'
+        type: string
+        required: true
+        default: "10s"
     push:
       branches:
       - main
       - test
-      - dev    
+      - dev 
 
 jobs:
   build:
